@@ -1,0 +1,93 @@
+
+const vehicleImage = document.getElementById("vehicleImage");
+const viewLabel = document.getElementById("viewLabel");
+const viewButtons = document.querySelectorAll(".view-button");
+const interiorButton = document.getElementById("interiorButton");
+
+const vehicleViews = {
+  exterior: {
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=90",
+    label: "EXTERIOR / CARMINE RED",
+    alt: "Porsche-inspired sports car exterior"
+  },
+  interior: {
+    image: "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1800&q=90",
+    label: "INTERIOR / BLACK & RED",
+    alt: "Luxury dark automotive interior"
+  }
+};
+
+function changeVehicleView(view) {
+  const selectedView = vehicleViews[view];
+
+  if (!selectedView) return;
+
+  vehicleImage.style.opacity = "0";
+
+  window.setTimeout(() => {
+    vehicleImage.src = selectedView.image;
+    vehicleImage.alt = selectedView.alt;
+    viewLabel.textContent = selectedView.label;
+    vehicleImage.style.opacity = "1";
+  }, 180);
+
+  viewButtons.forEach(button => {
+    const isActive = button.dataset.view === view;
+
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+viewButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    changeVehicleView(button.dataset.view);
+  });
+});
+
+interiorButton.addEventListener("click", () => {
+  changeVehicleView("interior");
+
+  document.getElementById("vehicleStage").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+});
+
+// Animated performance figures.
+const counters = document.querySelectorAll("[data-count]");
+
+function animateCounter(element) {
+  const target = Number(element.dataset.count);
+  const decimals = Number(element.dataset.decimals || 0);
+  const duration = 1500;
+  const startTime = performance.now();
+
+  function updateCounter(currentTime) {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+    const currentValue = target * easedProgress;
+
+    element.textContent = currentValue.toFixed(decimals);
+
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    }
+  }
+
+  requestAnimationFrame(updateCounter);
+}
+
+const counterObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => counterObserver.observe(counter));
+
+// Update footer year.
+document.getElementById("year").textContent = new Date().getFullYear();
