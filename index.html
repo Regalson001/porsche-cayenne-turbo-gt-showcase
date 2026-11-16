@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0c">
+  <meta name="description" content="A collector-inspired Porsche Cayenne Turbo GT automotive wall display.">
+  <title>Porsche Cayenne Turbo GT | Dream Garage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand-symbol">P</span>
+      <span>GARAGE <strong>01</strong></span>
+    </a>
+
+    <div class="topbar-center">
+      <span class="status-dot"></span>
+      COLLECTOR'S AUTOMOTIVE SERIES
+    </div>
+
+    <a class="topbar-link" href="#specifications">VIEW SPECIFICATIONS <span>↗</span></a>
+  </header>
+
+  <main id="home">
+    <section class="showcase">
+      <div class="wall-label">
+        <span>THE DREAM GARAGE</span>
+        <span class="label-line"></span>
+        <span>COLLECTION / 001</span>
+      </div>
+
+      <div class="poster-frame">
+        <div class="frame-top">
+          <span class="edition">PORSCHE / PERFORMANCE SUV</span>
+          <span class="edition-number">01 — 06</span>
+        </div>
+
+        <div class="poster-heading">
+          <div>
+            <span class="overline">THE ART OF PERFORMANCE</span>
+            <h1>CAYENNE <span>TURBO GT</span></h1>
+          </div>
+          <div class="model-year">GT<br><span>V8</span></div>
+        </div>
+
+        <div class="vehicle-stage" id="vehicleStage">
+          <div class="stage-glow"></div>
+          <div class="stage-grid"></div>
+
+          <img
+            class="vehicle-image"
+            id="vehicleImage"
+            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=90"
+            alt="Porsche-inspired red performance sports car showcase"
+          >
+
+          <div class="image-tag">
+            <span class="status-dot"></span>
+            <span id="viewLabel">EXTERIOR / CARMINE RED</span>
+          </div>
+
+          <div class="image-index">GT<span>01</span></div>
+        </div>
+
+        <div class="view-controls">
+          <span class="control-label">SELECT VIEW</span>
+          <div class="view-buttons">
+            <button class="view-button active" data-view="exterior" aria-pressed="true">01 / EXTERIOR</button>
+            <button class="view-button" data-view="interior" aria-pressed="false">02 / INTERIOR</button>
+          </div>
+        </div>
+
+        <div class="poster-bottom">
+          <div class="poster-model">
+            <span class="mini-label">THE MACHINE</span>
+            <h2>BUILT TO<br>DOMINATE.</h2>
+            <p>4.0L V8 · TWIN TURBO · ALL-WHEEL DRIVE</p>
+          </div>
+
+          <div class="poster-quote">
+            <span>ENGINEERED FOR THE UNEXPECTED.</span>
+            <span class="quote-line"></span>
+            <span>PORSCHE / GT DIVISION</span>
+          </div>
+
+          <div class="poster-stamp">
+            <span>GT</span>
+            <small>PERFORMANCE<br>COLLECTION</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="wall-footer">
+        <span>STUTTGART, GERMANY</span>
+        <span>PRECISION / POWER / PRESENCE</span>
+        <span>DESIGNED FOR THE DRIVE</span>
+      </div>
+    </section>
+
+    <section class="specifications" id="specifications">
+      <div class="section-title">
+        <div>
+          <span class="section-index">01 / PERFORMANCE DATA</span>
+          <h2>THE NUMBERS<br>BEHIND THE <em>BEAST.</em></h2>
+        </div>
+        <p>A collector-style look at the performance figures of the Cayenne Turbo GT specification represented in this concept.</p>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-number">01</span>
+          <span class="stat-label">MAXIMUM POWER</span>
+          <div class="stat-value"><strong data-count="650">0</strong><span>HP</span></div>
+          <p>4.0-litre twin-turbo V8</p>
+          <div class="stat-line"></div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-number">02</span>
+          <span class="stat-label">0–100 KM/H</span>
+          <div class="stat-value"><strong data-count="3.3" data-decimals="1">0</strong><span>SEC</span></div>
+          <p>Rapid acceleration</p>
+          <div class="stat-line"></div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-number">03</span>
+          <span class="stat-label">TOP SPEED</span>
+          <div class="stat-value"><strong data-count="305">0</strong><span>KM/H</span></div>
+          <p>Maximum claimed speed</p>
+          <div class="stat-line"></div>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-number">04</span>
+          <span class="stat-label">ENGINE CONFIGURATION</span>
+          <div class="stat-value"><strong>V8</strong></div>
+          <p>4.0L twin-turbocharged</p>
+          <div class="stat-line"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="interior-section">
+      <div class="interior-visual">
+        <img
+          src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=1400&q=85"
+          alt="Luxury automotive interior detail"
+          loading="lazy"
+        >
+        <div class="interior-overlay"></div>
+        <div class="interior-caption">
+          <span>THE COCKPIT</span>
+          <strong>01 / DRIVER FOCUSED</strong>
+        </div>
+      </div>
+
+      <div class="interior-copy">
+        <span class="section-index">02 / INTERIOR CHARACTER</span>
+        <h2>BLACK.<br><em>RED.</em><br>UNMISTAKABLE.</h2>
+        <p>A dark performance-inspired cabin concept with black upholstery, red dotted seat detailing and a focused driver environment.</p>
+
+        <div class="interior-details">
+          <div><span class="detail-dot red"></span><span>Black performance upholstery</span></div>
+          <div><span class="detail-dot"></span><span>Red perforated seat accents</span></div>
+          <div><span class="detail-dot silver"></span><span>Sport-focused cabin detailing</span></div>
+        </div>
+
+        <button class="outline-button" id="interiorButton">EXPLORE INTERIOR <span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="engineering">
+      <div class="engineering-heading">
+        <span class="section-index">03 / ENGINEERING DNA</span>
+        <h2>POWER WITH<br><em>PRECISION.</em></h2>
+      </div>
+
+      <div class="engineering-grid">
+        <article class="engineering-card">
+          <span class="engineering-icon">01</span>
+          <h3>TWIN-TURBO V8</h3>
+          <p>A powerful 4.0-litre twin-turbocharged V8 at the heart of the performance experience.</p>
+        </article>
+
+        <article class="engineering-card">
+          <span class="engineering-icon">02</span>
+          <h3>PERFORMANCE DNA</h3>
+          <p>GT-inspired engineering and a performance-oriented chassis philosophy.</p>
+        </article>
+
+        <article class="engineering-card">
+          <span class="engineering-icon">03</span>
+          <h3>COMMANDING DESIGN</h3>
+          <p>A muscular SUV silhouette designed to make its presence known.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="final-banner">
+      <div class="banner-content">
+        <span class="section-index">THE DREAM GARAGE COLLECTION / 001</span>
+        <h2>NOT JUST<br>A VEHICLE.<br><em>A STATEMENT.</em></h2>
+        <a href="#home" class="banner-button">RETURN TO THE DISPLAY ↑</a>
+      </div>
+      <div class="banner-watermark">GT</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">GARAGE <strong>01</strong></div>
+    <p>An independent automotive design showcase concept.</p>
+    <span>© <span id="year"></span> DREAM GARAGE COLLECTION</span>
+  </footer>
+</body>
+</html>
